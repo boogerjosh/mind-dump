@@ -1,5 +1,8 @@
 import { Redirect } from "expo-router";
+import { GlobalStateProvider } from "../hook/GlobalState";
 
 export default function Index() {
-    return <Redirect href="/home" />;
+    return <GlobalStateProvider>
+        <Redirect href="/home" />;
+    </GlobalStateProvider>
 }

@@ -11,6 +11,11 @@ const styles = StyleSheet.create({
     fontSize: SIZES.xxLarge,
     color: "#000000",
   },
+  headerTextCrete: {
+    fontFamily: FONT.regularPoppin,
+    fontSize: 24,
+    color: "#000000",
+  },
   boldText: {
     fontFamily: FONT.boldPoppin
   },
@@ -30,7 +35,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   searchInput: {
-    fontFamily: FONT.regular,
+    fontFamily: FONT.regularPoppin,
     width: "100%",
     height: "100%",
     paddingHorizontal: SIZES.medium,

@@ -1,19 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetch = (endpoint, query) => {
+const useFetch = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const options = {
     method: "GET",
-    url: `https://jsearch.p.rapidapi.com/${endpoint}`,
-    headers: {
-      "X-RapidAPI-Key": '',
-      "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
-    },
-    params: { ...query },
+    url: `https://api.giphy.com/v1/gifs/trending?api_key=vEbakbyVTwtR8MKWgovBBmwZ5ojJ8cwN&limit=21&rating=g`,
   };
 
   const fetchData = async () => {
@@ -21,7 +16,7 @@ const useFetch = (endpoint, query) => {
 
     try {
       const response = await axios.request(options);
-
+      console.log(response);
       setData(response.data.data);
       setIsLoading(false);
     } catch (error) {
@@ -33,6 +28,7 @@ const useFetch = (endpoint, query) => {
   };
 
   useEffect(() => {
+    console.log('masuk');
     fetchData();
   }, []);
 
