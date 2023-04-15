@@ -17,4 +17,6 @@
 
 <img width="492" alt="Screen Shot 2023-04-15 at 20 10 53" src="https://user-images.githubusercontent.com/94213206/232227174-b6030622-2c98-4072-be60-20ff09aecd07.png">
 
+## Bugs:
 
+- The create item is succesfully added and it shows to the UI when i run the app on the `Web` but when i run on `Expo` it is succesfully added but it doesnt show to the UI and i still dont know how to solve it
