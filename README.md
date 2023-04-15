@@ -24,6 +24,8 @@
 
 <img width="292" alt="Screen Shot 15-04-23 at 20 47" src="https://user-images.githubusercontent.com/94213206/232228139-bc418d9a-c6e1-413d-81fd-587bc2c027cb.jpg">
 
+<img width="292" alt="Screen Shot 15-04-23 at 20 58" src="https://user-images.githubusercontent.com/94213206/232228878-c5c8a31a-8085-41c9-99df-3e7c5ae23a84.jpg">
+
 </div>
 
 ## Bugs:
