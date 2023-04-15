@@ -18,10 +18,16 @@
 <div style='display: 'flex'>
 <img width="392" alt="Screen Shot 2023-04-15 at 20 10 53" src="https://user-images.githubusercontent.com/94213206/232227174-b6030622-2c98-4072-be60-20ff09aecd07.png">
 
-<img width="392" alt="Screen Shot 15-04-23 at 20 38" src="https://user-images.githubusercontent.com/94213206/232227596-045445a2-c4d7-40bb-89f4-f5e9425f7977.jpg">
+<img width="292" alt="Screen Shot 15-04-23 at 20 38" src="https://user-images.githubusercontent.com/94213206/232227596-045445a2-c4d7-40bb-89f4-f5e9425f7977.jpg">
+
 
 </div>
 
 ## Bugs:
 
 - The create item is succesfully added and it shows to the UI when i run the app on the `Web` but when i run on `Expo` it is succesfully added but it doesnt show to the UI and i still dont know how to solve it
+
+## Expo Scan
+
+<img width="514" alt="Screen Shot 2023-04-15 at 20 44 49" src="https://user-images.githubusercontent.com/94213206/232227868-81fdcbe4-9a8c-452f-b3bd-a0117bb6f64e.png">
+
