@@ -13,9 +13,9 @@ import { COLORS, SIZES } from "../../../constants";
 import { GlobalStateContext } from "../../../hook/GlobalState";
 
 const NewGIFS = ({searchTerm}) => {
+  const { isLoading } = useListData();
   const { globalState } = useContext(GlobalStateContext);
   const lists = globalState.items; // Ini data
-  const { isLoading } = useListData();
   const [savedData, setSavedData] = useState(null);
   const [isLoadingOther, setIsLoading] = useState(false);
 
@@ -47,7 +47,7 @@ const NewGIFS = ({searchTerm}) => {
     if (lists) {
       storeData();
     }
-    
+
     getData();
   }, [lists]);
 
@@ -56,16 +56,16 @@ const NewGIFS = ({searchTerm}) => {
       const filteredGIF = savedData.filter(gif => gif.title.toLowerCase().includes(searchTerm.toLowerCase()));
       setSavedData(filteredGIF);
      } else {
+      console.log(lists);
       setSavedData(lists);
      }
-  }, [searchTerm])
+  }, [searchTerm, lists])
 
   return (
     <View style={styles.container}>
       {isLoading || savedData === null ? (
           <ActivityIndicator size='large' color={COLORS.primary} style={{marginTop: SIZES.medium}}/>
         )  : (
-          console.log(savedData),
           <View>
               <MasonryList
                 data={savedData}
