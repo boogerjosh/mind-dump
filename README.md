@@ -20,9 +20,9 @@
 
 <img width="292" alt="Screen Shot 15-04-23 at 20 38" src="https://user-images.githubusercontent.com/94213206/232227596-045445a2-c4d7-40bb-89f4-f5e9425f7977.jpg">
 
-![Image 15-04-23 at 20 48](https://user-images.githubusercontent.com/94213206/232228016-876c55e1-bd85-4923-9039-b54ef9441e4c.jpg)
+<img width="292" alt="Screen Shot 15-04-23 at 20 48" src="https://user-images.githubusercontent.com/94213206/232228016-876c55e1-bd85-4923-9039-b54ef9441e4c.jpg">
 
-![Image 15-04-23 at 20 47](https://user-images.githubusercontent.com/94213206/232228139-bc418d9a-c6e1-413d-81fd-587bc2c027cb.jpg)
+<img width="292" alt="Screen Shot 15-04-23 at 20 47" src="https://user-images.githubusercontent.com/94213206/232228139-bc418d9a-c6e1-413d-81fd-587bc2c027cb.jpg">
 
 </div>
 
@@ -32,7 +32,7 @@
 
 ## Expo Scan
 
-![Image 15-04-23 at 20 45](https://user-images.githubusercontent.com/94213206/232228082-fc5b2cd3-a372-4837-ae35-ccd77b10d878.jpg)
+<img width="292" alt="Screen Shot 15-04-23 at 20 45" src="https://user-images.githubusercontent.com/94213206/232228082-fc5b2cd3-a372-4837-ae35-ccd77b10d878.jpg">
 
 
 
