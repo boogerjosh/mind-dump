@@ -8,8 +8,8 @@ import { useState, useEffect } from "react";
 
 const CreateContent = ({handleClick}) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { data, isLoading, error } = useFetch();
-  console.log(searchTerm);
+  const { data, isLoading, error } = useFetch(searchTerm);
+
   return (
     <View>
 

@@ -14,11 +14,10 @@ const DetailHeader = ({handleClickNavigate, urlImg}) => {
         <TouchableOpacity onPress={handleClickNavigate} style={{width: '100%',
             zIndex: 3,
             position: 'absolute',
-            top: -10,
-            height: "100%",
+            top: 46,
             display: "flex",
             justifyContent: "center",
-            paddingRight: 16,
+            paddingRight: 39,
             alignItems: "center"}}>
             <Icon style={{
             alignSelf: "flex-end",  
