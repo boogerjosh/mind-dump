@@ -69,8 +69,7 @@ const Detail = () => {
           />
 
           <ScrollView showsVerticalScrollIndicator={false}>
-            <DetailHeader handleClickNavigate={handleClickNavigate} urlImg={savedData.urlImg
-    }/>
+            <DetailHeader handleClickNavigate={handleClickNavigate} urlImg={savedData.urlImg}/>
             <View
               style={{
                 flex: 1,

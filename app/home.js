@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     zIndex: 2,
     backgroundColor: '#CCFF00',
     paddingHorizontal: 40,
-    paddingVertical: 10,
-    bottom: 20,
+    paddingVertical: 20,
+    bottom: 30,
     right: 23,
     borderRadius: 55,
     textAlign: 'center',
@@ -69,6 +69,8 @@ const styles = StyleSheet.create({
   buttonLabel: {
     fontFamily: FONT.mediumPoppin,
     fontWeight: 600,
+    textAlign: 'center',
+    fontSize: 16
   },
   scrollView: {
     flex: 1,

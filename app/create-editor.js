@@ -115,9 +115,8 @@ const styles = StyleSheet.create({
       position: 'absolute', 
       zIndex: 2, 
       backgroundColor: '#CCFF00', 
-      paddingHorizontal: 125, 
-      paddingVertical: 10, 
-      bottom: 20, 
+      paddingVertical: 20, 
+      bottom: 30, 
       borderRadius: 55, 
       left: 23, 
       right: 23, 
@@ -125,7 +124,9 @@ const styles = StyleSheet.create({
     },
     selectBtnText: {
       fontFamily: FONT.mediumPoppin, 
-      fontWeight:600
+      fontWeight:600,
+      textAlign: 'center',
+      fontSize: 16
     },
     contentContainer: {
       flex: 1,
