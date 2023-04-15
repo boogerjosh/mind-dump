@@ -11,12 +11,11 @@ import { useRoute } from '@react-navigation/native';
 import styles from "./header.style";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Header = () => {
+const Header = ({searchTerm, setSearchTerm}) => {
   const route = useRoute();
   let currenRoute = route.name;
 
   const router = useRouter();
-  const [searchTerm, setSearchTerm] = useState("");
   const [showSearch, setShowSearch] = useState(false);
 
   const handleClick = () => {
@@ -26,9 +25,9 @@ const Header = () => {
 
   const handleClickBack = () => {
     if (currenRoute === 'create') {
-      router.push(`/home`);
+      router.back(`/home`);
     } else {
-      router.push(`/create`);
+      router.back(`/create`);
     }
   }
   

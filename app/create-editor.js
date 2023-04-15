@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import { SafeAreaView, ScrollView, View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { SafeAreaView, ScrollView, View, ActivityIndicator, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { Stack, useRouter } from "expo-router";
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {
     Header,
@@ -15,7 +16,29 @@ const CreateEditor = () => {
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
   const { globalState, setGlobalState } = useContext(GlobalStateContext);
+  const [savedData, setSavedData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const urlImg = globalState.urlImage;
+
+  useEffect(() => {
+    // Retrieve data from AsyncStorage
+    const getData = async () => {
+      try {
+        const value = await AsyncStorage.getItem('urlImg');
+        if (value !== null) {
+          setSavedData(JSON.parse(value));
+        }
+      } catch (e) {
+        console.log('Error retrieving data from AsyncStorage:', e);
+      }
+    };
+
+    // Call the storeData function once filteredGIF is available
+    if (urlImg) {
+      getData();
+    }
+    setIsLoading(false);
+  }, [urlImg]);
 
   //Date
   const currentDate = new Date();
@@ -46,36 +69,41 @@ const CreateEditor = () => {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-        <Stack.Screen
-        options={{
-            headerShown: false
-        }}
-        />
-        
-        <TouchableOpacity onPress={handleNavigate} style={styles.selectBtn}>
-            <Text style={styles.selectBtnText}>Simpan</Text>
-        </TouchableOpacity>
+    <>
+      {isLoading || savedData === null ? (
+        <ActivityIndicator size='large' color={COLORS.primary} style={{marginTop: 13}}/>
+      ) : (
+        <SafeAreaView style={styles.container}>
+            <Stack.Screen
+            options={{
+                headerShown: false
+            }}
+            />
+            
+            <TouchableOpacity onPress={handleNavigate} style={styles.selectBtn}>
+                <Text style={styles.selectBtnText}>Simpan</Text>
+            </TouchableOpacity>
 
-        <ScrollView showsVerticalScrollIndicator={false}>
-            <View
-                style={styles.contentContainer}
-            >
-                <Header/>
-                
-                <CreateEditorContent 
-                    urlImg={urlImg} 
-                    title={title} 
-                    setTitle={setTitle}
-                    description={description}
-                    setDescription={setDescription}
-                />
-            </View>
-        </ScrollView>
-    </SafeAreaView>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View
+                    style={styles.contentContainer}
+                >
+                    <Header/>
+                    
+                    <CreateEditorContent 
+                        urlImg={savedData} 
+                        title={title} 
+                        setTitle={setTitle}
+                        description={description}
+                        setDescription={setDescription}
+                    />
+                </View>
+            </ScrollView>
+        </SafeAreaView>
+      )}
+    </>
   )
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -103,6 +131,6 @@ const styles = StyleSheet.create({
       flex: 1,
       padding: SIZES.medium,
     },
-  });
+});
 
 export default CreateEditor;

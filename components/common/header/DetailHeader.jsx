@@ -40,14 +40,7 @@ const styles = StyleSheet.create({
   },
   closeIcon: {
     alignSelf: "flex-end",  
-    shadowColor: "#000000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 5,
-    shadowRadius: 3,
-    elevation: 5
+    shadowColor: "#000000"
   },
 });
 

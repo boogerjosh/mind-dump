@@ -1,5 +1,6 @@
 import { SafeAreaView, ScrollView, View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { Stack, useRouter } from "expo-router";
+import { useState } from "react";
 
 import { COLORS, SIZES, FONT } from "../constants";
 import {
@@ -10,6 +11,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Home = () => {
   const router = useRouter()
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleNavigate = () => {
     router.push(`/create`);
@@ -32,11 +34,11 @@ const Home = () => {
 
       <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
         <View style={styles.contentContainer}>
-          <Header/>
+          <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         </View>
-        <NewGIFS />
+        <NewGIFS searchTerm={searchTerm} />
       </ScrollView>
-      
+
     </SafeAreaView>
   );
 };

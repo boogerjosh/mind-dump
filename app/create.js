@@ -7,10 +7,11 @@ import {
   Text,
   StyleSheet
 } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { COLORS, SIZES, FONT } from "../constants";
 import { Stack, useRouter } from "expo-router";
 import { GlobalStateContext } from "../hook/GlobalState";
-
 import { Header, Createcontent } from "../components";
 
 const CreatePage = () => {
@@ -18,8 +19,18 @@ const CreatePage = () => {
   const router = useRouter();
 
   const handleClick = (url) => {
-    router.push(`/create-editor`);
+    // Save data to AsyncStorage
+    const storeData = async () => {
+      try {
+        await AsyncStorage.setItem('urlImg', JSON.stringify(url));
+      } catch (e) {
+        console.log('Error saving data to AsyncStorage:', e);
+      }
+    };
+
+    storeData();
     setGlobalState((prevState) => ({ ...prevState, urlImage: url }));
+    router.push(`/create-editor`);
   };
 
   return (
