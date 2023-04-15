@@ -1,16 +1,20 @@
 import { SafeAreaView, ScrollView, View, TouchableOpacity, Text, useWindowDimensions, Image } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { useContext } from 'react';
+import { useRoute } from '@react-navigation/native';
 
-import { COLORS } from "../constants";
-import DetailContent from "../components/detail/DetailContent";
-import DetailHeader from "../components/common/header/DetailHeader";
-import { GlobalStateContext } from '../hook/GlobalState';
+import { COLORS } from "../../constants";
+import DetailContent from "../../components/detail/DetailContent";
+import DetailHeader from "../../components/common/header/DetailHeader";
+import { GlobalStateContext } from '../../hook/GlobalState';
 
 const Detail = () => {
   const router = useRouter();
+  const route = useRoute();
   const { globalState } = useContext(GlobalStateContext);
-  const detailItem = globalState.item;
+  const listOfGifts = globalState.items;
+  const itemId = parseInt(route.params.id);
+  const filteredGIF = listOfGifts.find(gif => gif.id === itemId);
 
   const handleClickNavigate = () => {
     router.push(`/home`);
@@ -24,7 +28,8 @@ const Detail = () => {
       />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <DetailHeader handleClickNavigate={handleClickNavigate} urlImg={detailItem.urlImg}/>
+        <DetailHeader handleClickNavigate={handleClickNavigate} urlImg={filteredGIF.urlImg
+}/>
         <View
           style={{
             flex: 1,
@@ -32,7 +37,7 @@ const Detail = () => {
             paddingHorizontal: 34
           }}
         >
-            <DetailContent detailText={detailItem} />
+            <DetailContent detailText={filteredGIF} />
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 const CreateContent = ({handleClick}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const { data, isLoading, error } = useFetch();
-
+  console.log(searchTerm);
   return (
     <View>
 
@@ -24,13 +24,13 @@ const CreateContent = ({handleClick}) => {
                clearButtonMode='always'
                clearTextOnFocus={true}
                style={{fontFamily: FONT.regularPoppin,
-                width: "100%",
-                height: "100%",
-                paddingHorizontal: SIZES.medium,
-                padding: 14,
-                borderRadius: 6,
-                fontSize: 16,
-                backgroundColor: '#F7F7F7'}}
+               width: "100%",
+               height: "100%",
+               paddingHorizontal: SIZES.medium,
+               padding: 14,
+               borderRadius: 6,
+               fontSize: 16,
+               backgroundColor: '#F7F7F7'}}
                value={searchTerm}
                onChangeText={(text) => setSearchTerm(text)}
                placeholder='Find a GIF'

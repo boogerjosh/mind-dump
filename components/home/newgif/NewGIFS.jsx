@@ -1,16 +1,20 @@
 import {
   View,
-  Text,
   ActivityIndicator
 } from "react-native";
 import MasonryList from '@react-native-seoul/masonry-list';
+import { useContext } from 'react';
 
 import styles from "./newgifs.style";
 import NewGIFCard from "../../common/cards/newgif/NewGIFCard";
 import useListData from "../../../hook/useListData";
+import { COLORS, SIZES } from "../../../constants";
+import { GlobalStateContext } from "../../../hook/GlobalState";
 
 const NewGIFS = () => {
-  const { isLoading, list } = useListData();
+  const { globalState } = useContext(GlobalStateContext);
+  const list = globalState.items;
+  const { isLoading } = useListData();
 
   return (
     <View style={styles.container}>

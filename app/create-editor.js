@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { SafeAreaView, ScrollView, View, TouchableOpacity, Text } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { useContext } from 'react';
+import { useRoute } from '@react-navigation/native';
 
 import {
     Welcome,
@@ -34,8 +35,15 @@ const CreateEditor = () => {
   const formattedDate = `${monthNames[currentDate.getMonth()]} ${day}${daySuffix} ${currentDate.getFullYear()}`;
 
   const handleNavigate = () => {
-    router.push(`/detail`);
-    setGlobalState(prevState => ({ ...prevState, item: { title:  title, description: description, urlImg: urlImg, date: formattedDate} }));
+    if (title === '') {
+        alert('Title cannot be empty.');
+    } else if (description === '') {
+        alert('Description cannot be empty.');
+    } else {
+        let newObjItem = { id: globalState.items.length > 0 ? globalState.items[globalState.items.length-1].id + 1 : 1, title, description, urlImg, date: formattedDate };
+        setGlobalState(prevState => ({ ...prevState, items: [...prevState.items, newObjItem] }));
+        router.push(`/home`);
+    }
   }
 
   return (

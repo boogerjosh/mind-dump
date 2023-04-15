@@ -20,7 +20,17 @@ const DetailHeader = ({handleClickNavigate, urlImg}) => {
             justifyContent: "center",
             paddingRight: 16,
             alignItems: "center"}}>
-            <Icon style={{alignSelf: "flex-end", elevation: 4, shadowColor: '#000000', shadowOpacity: 0, shadowRadius: 4}} name="close" size={35} color="#FFFFFF" />
+            <Icon style={{
+            alignSelf: "flex-end",  
+            shadowColor: "#000000",
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 5,
+            shadowRadius: 3,
+            elevation: 5
+            }} name="close" size={35} color="#FFFFFF" />
         </TouchableOpacity>
     </View>
   );

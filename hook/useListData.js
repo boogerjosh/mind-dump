@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react';
+import { useContext } from 'react';
+
 import listOfGIFs from '../assets/data/data';
+import { GlobalStateContext } from '../hook/GlobalState';
 
 const useListData = () => {
-  const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { setGlobalState } = useContext(GlobalStateContext);
 
   useEffect(() => {
-    setIsLoading(false);
-    setList(listOfGIFs);
     setIsLoading(true);
+    setGlobalState(prevState => ({ ...prevState, items:  listOfGIFs}));
+    setIsLoading(false);
   }, []);
 
-  return { list };
+  return { isLoading };
 };
 
 export default useListData;
