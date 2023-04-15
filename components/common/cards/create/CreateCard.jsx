@@ -1,7 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image, useWindowDimensions } from "react-native";
-import { checkImageURL } from "../../../../utils";
-import { COLORS, FONT, SIZES } from  "../../../../constants/theme";
+import { StyleSheet, View, TouchableOpacity, Image, useWindowDimensions } from "react-native";
 
 const CreateCard = ({ item, index, numColumns, handleClick }) => {
   const even = Number(index) % 3 === 0;

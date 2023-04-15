@@ -8,10 +8,10 @@ import {
 import { useRouter } from "expo-router";
 import { useRoute } from '@react-navigation/native';
 
-import styles from "./welcome.style";
+import styles from "./header.style";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Welcome = () => {
+const Header = () => {
   const route = useRoute();
   let currenRoute = route.name;
 
@@ -81,4 +81,6 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+
+
+export default Header;

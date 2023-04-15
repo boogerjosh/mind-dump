@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import { SafeAreaView, ScrollView, View, TouchableOpacity, Text } from "react-native";
+import { SafeAreaView, ScrollView, View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { useContext } from 'react';
-import { useRoute } from '@react-navigation/native';
 
 import {
-    Welcome,
+    Header,
 } from "../components";
 import { COLORS, SIZES, FONT } from "../constants";
 import { GlobalStateContext } from '../hook/GlobalState';
@@ -47,26 +46,22 @@ const CreateEditor = () => {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite, position: 'relative' }}>
+    <SafeAreaView style={styles.container}>
         <Stack.Screen
         options={{
             headerShown: false
         }}
         />
         
-        <TouchableOpacity onPress={handleNavigate} style={{position: 'absolute', zIndex: 2, backgroundColor: '#CCFF00', paddingHorizontal: 125, paddingVertical: 10, bottom: 20, borderRadius: 55, left: 23, right: 23, textAlign: 'center'}}>
-            <Text style={{fontFamily: FONT.mediumPoppin, fontWeight:600}}>Simpan</Text>
+        <TouchableOpacity onPress={handleNavigate} style={styles.selectBtn}>
+            <Text style={styles.selectBtnText}>Simpan</Text>
         </TouchableOpacity>
 
         <ScrollView showsVerticalScrollIndicator={false}>
             <View
-                style={{
-                flex: 1,
-                padding: SIZES.medium,
-                }}
+                style={styles.contentContainer}
             >
-                <Welcome
-                />
+                <Header/>
                 
                 <CreateEditorContent 
                     urlImg={urlImg} 
@@ -80,5 +75,34 @@ const CreateEditor = () => {
     </SafeAreaView>
   )
 }
+
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: COLORS.lightWhite,
+      position: "relative",
+    },
+    selectBtn: {
+      position: 'absolute', 
+      zIndex: 2, 
+      backgroundColor: '#CCFF00', 
+      paddingHorizontal: 125, 
+      paddingVertical: 10, 
+      bottom: 20, 
+      borderRadius: 55, 
+      left: 23, 
+      right: 23, 
+      textAlign: 'center'
+    },
+    selectBtnText: {
+      fontFamily: FONT.mediumPoppin, 
+      fontWeight:600
+    },
+    contentContainer: {
+      flex: 1,
+      padding: SIZES.medium,
+    },
+  });
 
 export default CreateEditor;

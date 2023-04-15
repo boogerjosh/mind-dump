@@ -9,7 +9,7 @@ const useFetch = (searchTerm) => {
   const fetchTrendingGIFs = async () => {
     const options = {
       method: "GET",
-      url: `https://api.giphy.com/v1/gifs/trending?api_key=vEbakbyVTwtR8MKWgovBBmwZ5ojJ8cwN&limit=21&rating=g`,
+      url: `https://api.giphy.com/v1/gifs/trending?api_key=vEbakbyVTwtR8MKWgovBBmwZ5ojJ8cwN&limit=30&rating=g`,
     };
 
     try {
@@ -23,7 +23,7 @@ const useFetch = (searchTerm) => {
   const fetchSearchResults = async (query) => {
     const options = {
       method: "GET",
-      url: `https://api.giphy.com/v1/gifs/search?api_key=vEbakbyVTwtR8MKWgovBBmwZ5ojJ8cwN&q=${query}&limit=21&rating=g`,
+      url: `https://api.giphy.com/v1/gifs/search?api_key=vEbakbyVTwtR8MKWgovBBmwZ5ojJ8cwN&q=${query}&limit=30&rating=g`,
     };
 
     try {
@@ -38,7 +38,6 @@ const useFetch = (searchTerm) => {
     setIsLoading(true);
 
     try {
-      console.log(fetchedData)// undefined
       let fetchedData;
       if (searchTerm) {
         fetchedData = await fetchSearchResults(searchTerm);
