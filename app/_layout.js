@@ -1,5 +1,7 @@
 import { Stack } from "expo-router";
 import { useFonts } from "expo-font";
+import { Redirect } from "expo-router";
+import { GlobalStateProvider } from "../hook/GlobalState";
 // import * as SplashScreen from "expo-splash-screen";
 
 // SplashScreen.preventAutoHideAsync();
@@ -25,9 +27,11 @@ const Layout = () => {
   }
 
   return (
-    <Stack initialRouteName="home">
-      <Stack.Screen name="home" />
-    </Stack>
+    <GlobalStateProvider>
+      <Stack initialRouteName="home">
+        <Stack.Screen name="home" />
+      </Stack>
+    </GlobalStateProvider>
   )
 };
 

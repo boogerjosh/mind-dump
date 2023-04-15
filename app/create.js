@@ -1,7 +1,9 @@
-import { useState } from "react";
 import { SafeAreaView, ScrollView, View, TouchableOpacity, Text, TextInput } from "react-native";
-import { COLORS, icons, images, SIZES, FONT } from "../constants";
+import { COLORS, SIZES, FONT } from "../constants";
 import { Stack, useRouter } from "expo-router";
+// import { GlobalStateContext } from './GlobalState';
+import { GlobalStateContext } from "../hook/GlobalState";
+import { useContext } from 'react';
 
 import {
   Welcome,
@@ -9,10 +11,12 @@ import {
 } from "../components";
 
 const CreatePage = () => {
+  const { setGlobalState } = useContext(GlobalStateContext);
   const router = useRouter();
 
   const handleClick = (url) => {
     router.push(`/create-editor`);
+    setGlobalState(prevState => ({ ...prevState, urlImage: url }));
   }
 
   return (

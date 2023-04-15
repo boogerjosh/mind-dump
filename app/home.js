@@ -3,11 +3,9 @@ import { SafeAreaView, ScrollView, View, TouchableOpacity, Text } from "react-na
 import { Stack, useRouter } from "expo-router";
 import { useRoute } from '@react-navigation/native';
 
-import { COLORS, icons, images, SIZES, FONT } from "../constants";
+import { COLORS, SIZES, FONT } from "../constants";
 import {
-  Nearbyjobs,
-  Popularjobs,
-  ScreenHeaderBtn,
+  NewGIFS,
   Welcome,
 } from "../components";
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -45,8 +43,8 @@ const Home = () => {
           <Welcome
           />
 
-          <Popularjobs />
         </View>
+        <NewGIFS />
       </ScrollView>
     </SafeAreaView>
   );

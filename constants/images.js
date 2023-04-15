@@ -1,9 +1,7 @@
-import profile from "../assets/images/kemal.jpg";
-import cat from "../assets/images/cat.png";
-import people from "../assets/images/people.png";
+import cat from "../assets/images/cat.gif";
+import people from "../assets/images/people.gif";
 
 export default {
-  profile,
   cat,
   people
 };
