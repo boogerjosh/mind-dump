@@ -15,4 +15,6 @@
 
 `expo start`
 
+<img width="492" alt="Screen Shot 2023-04-15 at 20 10 53" src="https://user-images.githubusercontent.com/94213206/232227174-b6030622-2c98-4072-be60-20ff09aecd07.png">
+
 
